@@ -30,7 +30,8 @@ class LCM_Sampler:
                     "seed": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
                     "steps": ("INT", {"default": 4, "min": 1, "max": 10000}),
                     "cfg": ("FLOAT", {"default": 8.0, "min": 0.0, "max": 100.0, "step": 0.5, "round": 0.01}),
-                    "size": ("INT", {"default": 512, "min": 512, "max": 768}),
+                    "height": ("INT", {"default": 512, "min": 512, "max": 768}),
+                    "width": ("INT", {"default": 512, "min": 512, "max": 768}),
                     "num_images": ("INT", {"default": 1, "min": 1, "max": 64}),
                     "use_fp16": ("BOOLEAN", {"default": True}),
                     "positive_prompt": ("STRING", {"multiline": True}),
@@ -41,11 +42,12 @@ class LCM_Sampler:
     FUNCTION = "sample"
     CATEGORY = "sampling"
 
-    def sample(self, seed, steps, cfg, positive_prompt, size, num_images, use_fp16):
+    def sample(self, seed, steps, cfg, positive_prompt, height, width, num_images, use_fp16):
         if self.pipe is None:
             self.pipe = LatentConsistencyModelPipeline.from_pretrained(
                 pretrained_model_name_or_path="SimianLuo/LCM_Dreamshaper_v7",
-                scheduler=self.scheduler
+                scheduler=self.scheduler,
+                safety_checker=None,
             )
 
             if use_fp16:
@@ -60,8 +62,8 @@ class LCM_Sampler:
 
         result = self.pipe(
             prompt=positive_prompt,
-            width=size,
-            height=size,
+            width=width,
+            height=height,
             guidance_scale=cfg,
             num_inference_steps=steps,
             num_images_per_prompt=num_images,
