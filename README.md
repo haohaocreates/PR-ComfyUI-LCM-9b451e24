@@ -1,6 +1,20 @@
-# Latent Consistency Model for ComfyUI
+# Latent Consistency Model for ComfyUI <!-- omit from toc -->
 
 ![Context Node](./assets/preview.png)
+
+## Table of Contents <!-- omit from toc -->
+
+- [Installation](#installation)
+- [Img2Img / Vid2Vid Requirements](#img2img--vid2vid-requirements)
+- [Workflows](#workflows)
+  - [LCM txt2img simple](#lcm-txt2img-simple)
+  - [LCM img2img simple](#lcm-img2img-simple)
+  - [LCM vid2vid simple](#lcm-vid2vid-simple)
+  - [LCM txt2img advanced](#lcm-txt2img-advanced)
+  - [LCM img2img advanced](#lcm-img2img-advanced)
+  - [LCM vid2vid advanced](#lcm-vid2vid-advanced)
+- [Known Issues](#known-issues)
+  - [`ValueError: Non-consecutive added token '<|startoftext|>' found. Should have index 49408 but has index 49406 in saved vocabulary.`](#valueerror-non-consecutive-added-token-startoftext-found-should-have-index-49408-but-has-index-49406-in-saved-vocabulary)
 
 This extension aims to integrate [Latent Consistency Model (LCM)](https://latent-consistency-models.github.io/) into [ComfyUI](https://github.com/comfyanonymous/ComfyUI).
 
@@ -16,7 +30,7 @@ git clone https://github.com/0xbitches/ComfyUI-LCM
 
 Then restart ComfyUI.
 
-## Img2Img / Vid2Vid
+## Img2Img / Vid2Vid Requirements
 
 ![vid2vid](./assets/vid2vid.gif)
 
@@ -28,6 +42,34 @@ For vid2vid, you will want to install this helper node:
 Then, use the `Load Video` and `Video Combine` nodes to create a vid2vid workflow, or download [this workflow](./assets/lcm_vid2vid.json).
 
 Huge thanks to [nagolinc](https://github.com/nagolinc) for implementing the pipeline.
+
+## Workflows
+
+To use these workflows, download or drag the image to Comfy.
+
+### LCM txt2img simple
+
+![txt2img](./assets/lcm_txt2img.png)
+
+### LCM img2img simple
+
+![img2img](./assets/lcm_img2img.png)
+
+### LCM vid2vid simple
+
+![img2img](./assets/lcm_vid2vid.png)
+
+### LCM txt2img advanced
+
+![img2img](./assets/lcm_txt2img_advanced.png)
+
+### LCM img2img advanced
+
+![img2img](./assets/lcm_img2img_advanced.png)
+
+### LCM vid2vid advanced
+
+![img2img](./assets/lcm_vid2vid_advanced.png)
 
 ## Known Issues
 
