@@ -1,5 +1,6 @@
 # Latent Consistency Model for ComfyUI <!-- omit from toc -->
 
+## Archival Notice: ComfyUI has officially implemented LCM scheduler, see [this commit](https://github.com/comfyanonymous/ComfyUI/commit/002aefa382585d171aef13c7bd21f64b8664fe28). Please update your install and use the official implementation. 
 ![Context Node](./assets/preview.png)
 
 ## Table of Contents <!-- omit from toc -->
