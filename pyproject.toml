@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-lcm"
+description = "This custom node implements a Latent Consistency Model sampler in ComfyUI. (LCM)"
+version = "1.0.0"
+license = "LICENSE"
+dependencies = ["diffusers"]
+
+[project.urls]
+Repository = "https://github.com/0xbitches/ComfyUI-LCM"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI-LCM"
+Icon = ""
